@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(test_solve main.cpp tests.h)
+add_executable(test_solve main.cpp tests.h solve.h)
 
 target_link_libraries(test_solve 
   PRIVATE 

@@ -2,6 +2,8 @@
 
 #include <gtest/gtest.h>
 
+#include "solve.h"
+
 using namespace testing;
 
 TEST (hw1_tests, no_roots_test)
