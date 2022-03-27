@@ -23,3 +23,10 @@ TEST (hw1_tests, two_roots_test)
 
   EXPECT_TRUE (contain_root (1.) && contain_root (-1.));
 }
+
+TEST (hw1_tests, one_root_test)
+{
+  std::vector<double> roots = solve (1., 2., 1.);
+  EXPECT_TRUE (roots.size () == 1);
+  EXPECT_TRUE (fuzzy_eq (roots[0], -1));
+}
