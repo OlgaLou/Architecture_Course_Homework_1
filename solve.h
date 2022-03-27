@@ -3,6 +3,21 @@
 #include <cmath>
 #include <vector>
 
+class IException
+{
+  public:
+    IException (const char *value) : m_value (value) {}
+    const char *get_message () const { return m_value; }
+  private:
+    const char *m_value = nullptr;
+};
+
+class ZeroExeption : public IException
+{
+public:
+  ZeroExeption () : IException ("Сoefficient a is zero") {}
+};
+
 bool fuzzy_eq (double a, double b, double min_compare = 10e-12)
 {
   return fabs (a - b) < min_compare;

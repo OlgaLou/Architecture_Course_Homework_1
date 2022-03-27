@@ -30,3 +30,8 @@ TEST (hw1_tests, one_root_test)
   EXPECT_TRUE (roots.size () == 1);
   EXPECT_TRUE (fuzzy_eq (roots[0], -1));
 }
+
+TEST (hw1_tests, zero_exception_test)
+{
+  EXPECT_THROW (solve (0., 0., 0.), ZeroExeption);
+}
