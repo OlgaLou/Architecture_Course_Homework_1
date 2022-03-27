@@ -40,3 +40,17 @@ TEST (hw1_tests, zero_exception_test)
 {
   EXPECT_THROW (solve (0., 0., 0.), ZeroExeption);
 }
+
+TEST (hw1_tests, nan_infinity_exception_test)
+{
+  EXPECT_THROW (solve (NAN, 0., 0.), NanExeption);
+  EXPECT_THROW (solve (0., NAN, 0.), NanExeption);
+  EXPECT_THROW (solve (0., 0., NAN), NanExeption);
+  double inf = std::numeric_limits<double>::infinity ();
+  EXPECT_THROW (solve (inf, 0., 0.), InfinityExeption);
+  EXPECT_THROW (solve (0., inf, 0.), InfinityExeption);
+  EXPECT_THROW (solve (0., 0., inf), InfinityExeption);
+  EXPECT_THROW (solve (-inf, 0., 0.), InfinityExeption);
+  EXPECT_THROW (solve (0., -inf, 0.), InfinityExeption);
+  EXPECT_THROW (solve (0., 0., -inf), InfinityExeption);
+}

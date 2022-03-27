@@ -18,6 +18,18 @@ public:
   ZeroExeption () : IException ("Сoefficient a is zero") {}
 };
 
+class NanExeption : public IException
+{
+public:
+  NanExeption () : IException ("Some coefficient is NAN") {}
+};
+
+class InfinityExeption : public IException
+{
+public:
+  InfinityExeption () : IException ("Some coefficient is Infinity") {}
+};
+
 bool fuzzy_eq (double a, double b, double min_compare = 10e-12)
 {
   return fabs (a - b) < min_compare;
