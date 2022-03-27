@@ -15,5 +15,8 @@ std::vector<double> solve (double a, double b, double c)
   if (D > 0)
     return {(- b - sqrt (D)) / (2 * a), (- b + sqrt (D)) / (2 * a)};
 
+  if (fuzzy_eq (D, 0.))
+    return {- b / (2 * a)};
+
   return {};
 }
