@@ -25,6 +25,9 @@ bool fuzzy_eq (double a, double b, double min_compare = 10e-12)
 
 std::vector<double> solve (double a, double b, double c)
 {
+  if (fuzzy_eq (a, 0.))
+    throw ZeroExeption ();
+
   double D = b * b - 4 * a * c;
 
   if (D > 0)
